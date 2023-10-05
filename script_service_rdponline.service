@@ -1,0 +1,11 @@
+[Unit]
+Description=Subindo nginx do rdponline após o boot
+Wants=network-online.target
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /script/script_service_rdponline.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
